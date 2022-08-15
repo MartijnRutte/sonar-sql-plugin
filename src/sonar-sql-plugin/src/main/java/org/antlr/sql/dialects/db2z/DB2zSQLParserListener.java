@@ -1,5 +1,4 @@
-// Generated from nl\belastingdienst\dps\db2g4\DB2zSQLParser.g4 by ANTLR 4.10.1
-// package nl.belastingdienst.dps.db2g4;
+// Generated from src/DB2zSQLParser.g4 by ANTLR 4.9.3
 package org.antlr.sql.dialects.db2z;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 

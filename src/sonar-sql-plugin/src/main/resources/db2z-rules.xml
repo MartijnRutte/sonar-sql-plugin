@@ -1,0 +1,34 @@
+<sql-rules>
+	<rule>
+		<key>DCL0080</key>
+		<internalKey>DCL0080</internalKey>
+		<name>GRANT TO PUBLIC forbidden</name>
+		<description><![CDATA[<h2>GRANT TO PUBLIC forbidden</h2><p>Only allowed with GRANT EXECUTE ON PLAN, GRANT EXECUTE ON PROCEDURE and GRANT EXECUTE ON FUNCTION.</p>]]></description>
+		<descriptionFormat>HTML</descriptionFormat>
+		<severity>MAJOR</severity>
+		<cardinality>SINGLE</cardinality>
+		<status>READY</status>
+		<remediationFunction>LINEAR</remediationFunction>
+		<remediationFunctionBaseEffort></remediationFunctionBaseEffort>
+		<debtRemediationFunctionCoefficient>3min
+		</debtRemediationFunctionCoefficient>
+		<tag>dcl</tag>
+		<ruleImplementation>
+			<names>
+					<textItem>GrantTableStatementContext</textItem>
+			</names>
+			<textToFind>
+                <textItem>TO PUBLIC</textItem>
+            </textToFind>
+			<ruleViolationMessage>SELECT * forbidden</ruleViolationMessage>
+			<ruleMatchType>ClassOnly</ruleMatchType>
+			<violatingRulesCodeExamples>
+					<ruleCodeExample>GRANT SELECT ON BVR.BVNEDERLANDCOMPLEET TO PUBLIC;</ruleCodeExample>
+			</violatingRulesCodeExamples>
+			<compliantRulesCodeExamples>
+					<ruleCodeExample>GRANT SELECT ON BVR.BVNEDERLANDCOMPLEET TO VERYSPECIFICUSER;
+					</ruleCodeExample>
+			</compliantRulesCodeExamples>
+	</ruleImplementation>
+	</rule>
+</sql-rules>
