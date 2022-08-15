@@ -11,6 +11,7 @@ import org.antlr.sql.dialects.rules.MySQLRules;
 import org.antlr.sql.dialects.rules.PSSQLRules;
 import org.antlr.sql.dialects.rules.TSQLRules;
 import org.antlr.sql.dialects.rules.VSQLRules;
+import org.antlr.sql.dialects.rules.DB2ZSQLRules;
 import org.sonar.plugins.sql.models.rules.Rule;
 import org.sonar.plugins.sql.models.rules.SqlRules;
 
@@ -33,6 +34,9 @@ public enum SQLDialectRules {
 
         {
             rules.addAll(VSQLRules.INSTANCE.getRules());
+        }
+        {
+            rules.addAll(DB2ZSQLRules.INSTANCE.getRules());
         }
         {
             rules.addAll(CommonRules.INSTANCE.getRules());
