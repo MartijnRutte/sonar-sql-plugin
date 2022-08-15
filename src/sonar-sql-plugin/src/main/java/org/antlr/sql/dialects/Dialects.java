@@ -10,7 +10,7 @@ import org.sonar.plugins.sql.models.rules.Rule;
 import org.sonar.plugins.sql.models.rules.SqlRules;
 
 public enum Dialects {
-    TSQL(new TSQLDialect()), PSSQL(new PsSqlDialect()), MYSQL(new MySqlDialect()), VSQL(new VSQLDialect());
+    TSQL(new TSQLDialect()), PSSQL(new PsSqlDialect()), MYSQL(new MySqlDialect()), VSQL(new VSQLDialect()), DB2ZSQL(new DB2zDialect());
 
     public AntlrContext parse(String text) {
         return parse(text, Collections.emptyList());
